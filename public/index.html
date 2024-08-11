@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    height: 100vh; /* Ensure the body takes the full viewport height */
+}
+
+.container {
+    margin-top: 50px;
+    background-color: rgba(207, 190, 190, 0.315);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid crimson;
+    box-shadow: 0 4px 8px rgba(160, 158, 158, 0.678);
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    max-height: 80vh; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+h1 {
+    color: #070707;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid crimson;
+    border-radius: 10px;
+    background-color: rgb(173, 203, 203);
+}
+
+input:focus {
+    outline: none;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+    border: 2px solid rgb(39, 79, 160);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #92a333;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 10px 10px black;
+    background-color: #92a333;
+    transition: all 0.3s ease;
+}
+
+#image-container {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.name {
+    text-align: center;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: -10px;
+    padding: 0;
+    color: crimson;
+    font-size: 12px;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+</style>
+<body>
+    <div class="main">
+        <video src="/111.mp4" autoplay loop muted></video>
+    </div>
+    <div class="container">
+        <h1>Image Generator Using MERN Stack</h1>
+        <div class="name">
+            <h5> A Mini Project Developed By</h5>
+            <ul>
+                <li>Arbeena Hassan</li>
+                <li>Chethana M</li> 
+            </ul>
+        </div>
+        <form id="generate-form">
+            <input type="text" id="prompt" placeholder="Enter a prompt" required><br>
+            <button id="btn" type="submit">Generate Image</button>
+        </form>
+        <div id="image-container"></div>
+    </div>
+    <center>
+        <button id="download-btn" style="display: none;">Download Image</button></center>
+    <script src="script.js"></script>
+</body>
+</html>
